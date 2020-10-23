@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Linked_List
 {
-    class LinkedListMethods
+   public class LinkedListMethods
     {
         public Node head;
         /// This method adds an entry to the list
@@ -30,6 +30,13 @@ namespace Linked_List
             }
             return temp;
         }
+        /// Method to enter a data from the front of the list
+        public void InsertFront(int newData) {
+            Node node = new Node(newData);
+            node.next = this.head;
+            this.head = node;
+            Console.WriteLine("Inserted: "+node.data);
+        }
         //To print the list by traversing through the list
         //and printing till the last data
         public void DisplayList() {
@@ -43,6 +50,7 @@ namespace Linked_List
             else {
                 while (temp != null) {
                     Console.Write("\t"+temp.data);
+                    temp = temp.next;
                 }
             }
         }
