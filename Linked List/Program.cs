@@ -7,9 +7,9 @@ namespace Linked_List
         static void Main(string[] args)
         {
             LinkedListMethods list = new LinkedListMethods();
-            list.InsertLast(70);
-            list.InsertLast(30);
-            list.InsertLast(56);
+            list.InsertFront(56);
+            list.InsertFront(30);
+            list.InsertFront(70);
             list.DisplayList();
 
         }
