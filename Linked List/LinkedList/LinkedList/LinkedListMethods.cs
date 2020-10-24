@@ -79,6 +79,18 @@ namespace LinkedList
             newNode.next = null;
             return null;
         }
+        /// Method to search an element present in the list
+        /// by traversing through the list till it appears
+        public int Search(int value) {
+            int count = 0;
+            while (this.head != null) {
+                Console.WriteLine("The value " +value+" is found");
+                return count;
+            }
+            this.head = this.head.next;
+            count++;
+            return count;
+        }
         //To print the list by traversing through the list
         //and printing till the last data
         public void DisplayList()
