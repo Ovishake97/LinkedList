@@ -41,31 +41,16 @@ namespace LinkedList
             this.head = node;
             Console.WriteLine("Inserted: " + node.data);
         }
-        /// Method to insert an element in between 
-        /// by fetching the size of the array
-        public void InsertMid(int newData)
-        {
+        public void InsertInBetween(int newData) {
+            Console.WriteLine("Enter the node where you want to add");
+            int data = Convert.ToInt32(Console.ReadLine());
             Node newNode = new Node(newData);
-            if (head == null)
-            { 
-                head = newNode;
+            Node temp = this.head;
+            while (temp.data!=data) {
+                temp = temp.next;
             }
-            else
-            {
-                int size = GetSize();
-                Node temp, currentNode;
-                int count = (size % 2 == 0) ? (size / 2) : ((size + 1) / 2); 
-                temp = head;
-                currentNode = null; 
-                for (int i = 0; i < count; i++)
-                { 
-                    currentNode = temp;  
-                    temp = temp.next;
-                }
-                currentNode.next = newNode;
-                newNode.next = temp;
-            }
-            Console.WriteLine("Inserted "+newNode.data+" to the middle");
+            newNode.next = temp.next;
+            temp.next = newNode;
         }
         //To print the list by traversing through the list
         //and printing till the last data
@@ -86,23 +71,5 @@ namespace LinkedList
                     temp = temp.next;
                 }
             }
-        }
-        /// Method to give the size of the linked list
-        /// by traversing through it
-        public int GetSize() {
-            Node temp = this.head;
-            int size = 0;
-            if (temp == null)
-            {
-                return size;
-            }
-            else {
-                while (temp != null) {
-                    temp = temp.next;
-                    size++;
-                }
-                return size;
-            }
-        }
-    }
+        }    }
 }
