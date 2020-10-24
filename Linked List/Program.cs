@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Linked_List
+namespace LinkedList
 {
     class Program
     {
@@ -8,10 +8,11 @@ namespace Linked_List
         {
             LinkedListMethods list = new LinkedListMethods();
             list.InsertFront(56);
-            list.InsertFront(30);
             list.InsertFront(70);
+            list.InsertFront(40);
+            list.InsertFront(65);
+            list.InsertMid(30);
             list.DisplayList();
-
         }
     }
 }
