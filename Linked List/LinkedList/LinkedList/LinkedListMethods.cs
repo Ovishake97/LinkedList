@@ -63,6 +63,22 @@ namespace LinkedList
             this.head = this.head.next;
             return this.head;
         }
+        //Method to delete the last node
+        //by traversing through the list till the node points to null
+        public Node DeleteLastNode() {
+            if (this.head == null) {
+                return null;
+            }
+            if (this.head.next == null) {
+                return null;
+            }
+            Node newNode = this.head;
+            while (newNode.next.next == null) {
+                newNode = newNode.next;
+            }
+            newNode.next = null;
+            return null;
+        }
         //To print the list by traversing through the list
         //and printing till the last data
         public void DisplayList()
