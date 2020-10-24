@@ -79,17 +79,66 @@ namespace LinkedList
             newNode.next = null;
             return null;
         }
+        /// Method to delete a user input data from the linked list 
+        /// by implicitly calling the search method 
+        public void DeleteRequiredData(int deleteData) {
+            int position = Search(deleteData);
+            if(this.head == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            Node temp = this.head;
+            if (position == 0)
+            {
+                this.head = temp.next;
+                return;
+            }
+            for (int i = 0; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
+            }
+            if (temp == null || temp.next == null)
+            {
+
+                return;
+            }
+            Node next = temp.next.next;
+            temp.next = next;
+            int count = GetSize();
+            Console.WriteLine("Number of elements left "+count);
+        }
         /// Method to search an element present in the list
         /// by traversing through the list till it appears
         public int Search(int value) {
             int count = 0;
-            while (this.head != null) {
-                Console.WriteLine("The value " +value+" is found");
-                return count;
+            Node temp = this.head;
+            while (temp!= null) {
+                if (temp.data == value)
+                {
+                    return count;
+                }
+                temp = temp.next;
+                count++;
             }
-            this.head = this.head.next;
-            count++;
+            
             return count;
+        }
+
+        public int GetSize() {
+            Node temp = this.head;
+            int size = 0;
+            if (temp == null)
+            {
+                return size;
+            }
+            else {
+                while (temp != null) {
+                    temp = temp.next;
+                    size++;
+                }
+                return size;
+            }
         }
         //To print the list by traversing through the list
         //and printing till the last data
