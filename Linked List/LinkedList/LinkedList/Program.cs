@@ -10,6 +10,7 @@ namespace LinkedList
             list.InsertFront(56);
             list.InsertFront(70);
             list.InsertInBetween(30);
+            Console.WriteLine(list.DeleteFirstNode()); 
             list.DisplayList();
             Console.ReadLine();
         }

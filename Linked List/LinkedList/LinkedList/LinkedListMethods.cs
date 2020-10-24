@@ -41,6 +41,8 @@ namespace LinkedList
             this.head = node;
             Console.WriteLine("Inserted: " + node.data);
         }
+        /// Method to insert an element
+        /// after an element as chosen by the user
         public void InsertInBetween(int newData) {
             Console.WriteLine("Enter the node where you want to add");
             int data = Convert.ToInt32(Console.ReadLine());
@@ -51,6 +53,15 @@ namespace LinkedList
             }
             newNode.next = temp.next;
             temp.next = newNode;
+        }
+        /// Method to delete the first node by
+        /// moving the head to the next node
+        public Node DeleteFirstNode() {
+            if (this.head == null) {
+                return null;
+            }
+            this.head = this.head.next;
+            return this.head;
         }
         //To print the list by traversing through the list
         //and printing till the last data
