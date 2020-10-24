@@ -7,11 +7,11 @@ namespace LinkedList
         static void Main(string[] args)
         {
             LinkedListMethods list = new LinkedListMethods();
-            list.InsertFront(56);
             list.InsertFront(70);
-            list.InsertInBetween(30);
-            Console.WriteLine(list.DeleteFirstNode());
-            Console.WriteLine(list.DeleteLastNode());
+            list.InsertFront(30);
+            list.InsertFront(40);
+            list.InsertFront(56);
+            list.DeleteRequiredData(40);
             list.DisplayList();
             Console.ReadLine();
         }
